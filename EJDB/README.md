@@ -1,4 +1,4 @@
-# Building the Docker Image
+## Building the Docker Image
 
 1. execute `docker build -t ejdb .`
 2. Find `ejdb` in the list of docker images `docker images`
@@ -6,9 +6,7 @@
 4. Execute `docker login --username=bjwbell --email=bjwbell@gmail.com`
 5. Push the image `docker push bjwbell/ejdb`
 
-
-
-# Running the sample Go app
+## Running the sample Go app
 1. Run the image, `docker run -a stdin -a stdout -a stderr -i -t bjwbell/ejdb`
 2. Change into the EJDB directory `cd dockerimages/EJDB/`
 3. `go get -u github.com/drone/routes`
@@ -16,7 +14,7 @@
 5. `go run app.go app1.toml &`
 6. `go run app.go app2.toml &`
 
-# POST, PUT, and GET
+## POST, PUT, and GET
 Examples for testing.
 ### POST
 ```
