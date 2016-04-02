@@ -1,4 +1,4 @@
-FROM docker/whalesay:latest
+FROM ubuntu:latest
 
 
 RUN apt-get -y update && apt-get -y install golang && apt-get -y install git-core && apt-get install -y bzr && apt-get install -y gcc
@@ -8,5 +8,5 @@ RUN add-apt-repository -y ppa:adamansky/ejdb
 RUN apt-get -y update
 RUN apt-get -y install ejdb ejdb-dbg
 ENV GOPATH /root
-RUN git clone https://bjwbell@bitbucket.org/bjwbell/assign2.git
-RUN assign2/installdeps.sh
+RUN git clone https://github.com/bjwbell/dockerimages.git
+RUN dockerimages/EJDB/installdeps.sh

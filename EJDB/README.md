@@ -9,20 +9,24 @@
 
 
 # Running the sample Go app
-1. `go run app1.toml &`
-2. `go run app2.toml &`
+1. Run the image, `docker run -a stdin -a stdout -a stderr -i -t bjwbell/ejdb`
+2. Change into the EJDB directory `cd dockerimages/EJDB/`
+3. `go get -u github.com/drone/routes`
+4. `go get -u github.com/pelletier/go-toml`
+5. `go run app.go app1.toml &`
+6. `go run app.go app2.toml &`
 
 # POST, PUT, and GET
 Examples for testing.
 ### POST
 ```
-curl -i -H "Accept: application/json" -X POST -d "{\"email\":\"JW@example.com\", \"country\": \"USA\", \"travel\":{\"flight\":{\"seat\":\"10B\"}}}" http://localhost:3000/profile
+curl -i -H "Accept: application/json" -X POST -d "{\"email\":\"JW@example.com\", \"country\": \"USA\", \"travel\":{\"flight\":{\"seat\":\"10B\"}}}" http://localhost:4001/profile
 ```
 ### PUT
 ```
-curl -i -H "Accept: application/json" -X PUT -d "{\"country\": \"CANADA\", \"travel\":{\"flight\":{\"seat\":\"99A\"}}}" http://localhost:3000/profile/JW@example.com
+curl -i -H "Accept: application/json" -X PUT -d "{\"country\": \"CANADA\", \"travel\":{\"flight\":{\"seat\":\"99A\"}}}" http://localhost:4001/profile/JW@example.com
 ```
 ### GET
 ```
-curl -i -H "Accept: application/json" http://localhost:3000/profile/JW@example.com
+curl -i -H "Accept: application/json" http://localhost:4002/profile/JW@example.com
 ```
